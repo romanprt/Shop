@@ -1,18 +1,28 @@
-package com.shop;
+package com.shop.models;
 
-public class Users {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class User {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	@Column(length = 45)
 	private String name;
+	@Column(length = 45)
 	private String telephone;
+	@Column(length = 45)
 	private String email;
-	private String userPassword;
-	public Users(Long id, String name, String telephone, String email, String userPassword) {
+	public User(Long id, String name, String telephone, String email) {
 		
 		this.id = id;
 		this.name = name;
 		this.telephone = telephone;
 		this.email = email;
-		this.userPassword = userPassword;
 	}
 	public Long getId() {
 		return id;
@@ -38,18 +48,10 @@ public class Users {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getUserPassword() {
-		return userPassword;
-	}
-	public void setUserPassword(String userPassword) {
-		this.userPassword = userPassword;
-	}
 	@Override
 	public String toString() {
-		return "Users [id=" + id + ", name=" + name + ", telephone=" + telephone + ", email=" + email
-				+ ", userPassword=" + userPassword + "]";
+		return "Users [id=" + id + ", name=" + name + ", telephone=" + telephone + ", email=" + email + "]";
 	}
-
 	
 
 }

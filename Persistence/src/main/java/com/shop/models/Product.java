@@ -1,10 +1,23 @@
-package com.shop;
+package com.shop.models;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Product {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	@Column(length = 45)
 	private String nameProduct;
+	@Column(length = 45)
 	private String price;
+	@Column(length = 45)
 	private String description;
+	@Column(length = 45)
 	private String amount;
 	public Product(Long id, String nameProduct, String price, String description, String amount) {
 	
